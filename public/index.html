@@ -21,7 +21,7 @@
         <h2>Filtered Countries</h2>
         <div v-for="country in countries" v-if="country.name === filterCountry">
           <p><strong>{{country.name}}</strong> Population: {{ country.population }}
-            <img :src="country.flag">
+            <img class="flag" :src="country.flag">
           </p>
         </div>
       </section>
