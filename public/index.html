@@ -20,8 +20,18 @@
     <section>
         <h2>Filtered Countries</h2>
         <div v-for="country in countries" v-if="country.name === filterCountry">
-          <p><strong>{{country.name }}</strong> Population: {{ country.population }}</p>
-          <!-- <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/250px-Flag_of_France.svg.png"> -->
+          <p><strong>{{country.name}}</strong> Population: {{ country.population }}
+            <img :src="country.flag">
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Fav Countries</h2>
+        <input type="text" v-model="favCountry"/>
+        <button v-on:click="addFavCountry(favCountry)">Add Fav Country</button>
+        <div v-for="favC in favCountry">
+            <p>{{favCountry}}</p>
         </div>
       </section>
 
