@@ -1,0 +1,39 @@
+  
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Countries App</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="text/javascript" src="./js/bundle.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <h1>Countries App</h1>
+
+    <div id ="filterInput">
+        <h3>Filter countries by name:</h3>
+        <input type="text" v-model="filterCountry"/>
+      </div>
+
+    <section>
+        <h2>Filtered Countries</h2>
+        <div v-for="country in countries" v-if="country.name === filterCountry">
+          <p><strong>{{country.name }}</strong> Population: {{ country.population }}</p>
+          <!-- <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/250px-Flag_of_France.svg.png"> -->
+        </div>
+      </section>
+
+      <section>
+          <h2>All Countries</h2>
+        <div v-for="country in countries">
+          <p><strong>{{country.name }}</strong> Population: {{ country.population }}</p>
+          <!-- <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/250px-Flag_of_France.svg.png"> -->
+        </div>
+      </section>
+
+  </div>
+
+</body>
+</html>
